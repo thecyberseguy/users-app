@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="thecyberseguy.usersapp.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/navigate_to_user_details"
+            app:destination="@id/nav_user_details" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/nav_user_details"
+        android:name="thecyberseguy.usersapp.ui.details.UserDetailsBottomSheet"
+        android:label="@string/user_details"
+        tools:layout="@layout/bottom_sheet_user_details">
+
+        <argument
+            android:name="user"
+            app:argType="thecyberseguy.usersapp.models.User" />
+
+    </dialog>
+
+</navigation>

@@ -1,0 +1,61 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.UsersApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/light_red</item>
+        <item name="colorOnPrimary">@color/light_red</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/maroon</item>
+        <item name="colorSecondaryVariant">@color/light_grey</item>
+        <item name="colorOnSecondary">@color/maroon</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="Theme.UsersApp" parent="Base.Theme.UsersApp" />
+
+    <!-- App Bar -->
+    <style name="Theme.UsersApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorControlHighlight">@android:color/darker_gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- Veil Layout -->
+    <style name="VeilLayoutView">
+        <item name="veilLayout_radius">10dp</item>
+        <item name="veilLayout_baseColor">@color/shimmer_base_light</item>
+        <item name="veilLayout_highlightColor">@color/shimmer_highlight_light</item>
+    </style>
+
+    <style name="VeilRecyclerView">
+        <item name="veilFrame_radius">10dp</item>
+        <item name="veilFrame_isItemWrapContentHeight">true</item>
+        <item name="veilFrame_baseColor">@color/shimmer_base_light</item>
+        <item name="veilFrame_highlightColor">@color/shimmer_highlight_light</item>
+    </style>
+
+    <!-- Button -->
+    <style name="Theme.UsersApp.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/large</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- Sheet -->
+    <style name="Theme.UsersApp.BottomSheetTheme" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Theme.UsersApp.BottomSheetStyle</item>
+    </style>
+
+    <style name="Theme.UsersApp.BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/light_red</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+</resources>

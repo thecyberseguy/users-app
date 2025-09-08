@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Users App</string>
+    <string name="error_no_internet">Slow or no internet connection, please check your internet settings</string>
+    <string name="error_internal_server">Internal server error, please try again</string>
+    <string name="ok">OK</string>
+    <string name="retry">Retry</string>
+    <string name="user_list">User List:</string>
+    <string name="data_not_found">Data not found</string>
+    <string name="home">Home</string>
+    <string name="hello_the_cyberse_guy">Hello, The Cyberse Guy</string>
+    <string name="close">Close</string>
+    <string name="user_details">User Details</string>
+</resources>

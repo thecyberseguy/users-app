@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.details.UserDetailsBottomSheet">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="thecyberseguy.usersapp.ui.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/standard"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="?actionBarSize"
+            android:layout_height="@dimen/tiny"
+            android:background="@drawable/rounded_rectangle"
+            android:backgroundTint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_user_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large"
+            android:text="@string/user_details"
+            android:textColor="@color/black"
+            android:textSize="@dimen/large_text_1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginEnd="@dimen/standard"
+            android:text="@{viewModel.user.formattedName}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/tv_user_id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_details_title"
+            tools:text="Name: The Cyberse Guy" />
+
+        <TextView
+            android:id="@+id/tv_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.user.formattedId}"
+            android:textColor="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_user_name"
+            tools:text="ID: 1" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@{viewModel.user.formattedUsername}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+            tools:text="Username: thecyberseguy" />
+
+        <TextView
+            android:id="@+id/tv_user_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@{viewModel.user.formattedEmail}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_username"
+            tools:text="Email: thecyberseguy@gmail.com" />
+
+        <TextView
+            android:id="@+id/tv_user_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@{viewModel.user.address.fullAddress}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_email"
+            tools:text="Address: Jakarta, Indonesia" />
+
+        <TextView
+            android:id="@+id/tv_user_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@{viewModel.user.formattedPhone}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_address"
+            tools:text="Phone: 0812-3456-7890" />
+
+        <TextView
+            android:id="@+id/tv_user_website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@{viewModel.user.formattedWebsite}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_phone"
+            tools:text="Website: thecyberseguy.com" />
+
+        <TextView
+            android:id="@+id/tv_user_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@{viewModel.user.company.fullCompany}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_website"
+            tools:text="Company: CyberseCorp" />
+
+        <Button
+            android:id="@+id/btn_close"
+            style="@style/Theme.UsersApp.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large"
+            android:backgroundTint="@color/primary"
+            android:onClick="@{() -> viewModel.onClickCloseButton()}"
+            android:stateListAnimator="@null"
+            android:text="@string/close"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_company" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
